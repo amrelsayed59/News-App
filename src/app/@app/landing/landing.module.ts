@@ -10,6 +10,8 @@ import { LandingComponent } from './landing.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 import { SharedModule } from '@shared/shared.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NewsFilterComponent } from './news-filter/news-filter.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -21,13 +23,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent],
+  declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent, NewsFilterComponent],
   imports: [
     CommonModule,
     ThemeModule,
     HomepageRoutingModule,
     SwiperModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

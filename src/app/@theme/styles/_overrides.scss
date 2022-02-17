@@ -17,6 +17,10 @@ body * {
     bottom: -8px !important;
 }
 
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #193f3d;
+}
+
 @font-face {
     font-family: 'Segoe';
     src: url('../../../assets/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');

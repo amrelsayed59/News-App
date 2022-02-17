@@ -1,0 +1,53 @@
+.news-filter {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  @media (max-width: 575px) {
+    display: block;
+    text-align: center;
+  }
+  .title {
+    h5 {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+  .filter-box {
+    form {
+      display: flex;
+      flex-direction: row-reverse;
+      @media (max-width: 575px) {
+        display: block;
+      }
+      input,
+      select {
+        background: transparent;
+        border: 1px solid #777777;
+        padding: 0.3rem 1rem;
+        border-radius: 15px;
+        outline: none;
+        color: #949494;
+        cursor: pointer;
+        font-size: 12px;
+        margin: 0 0.3rem;
+        @media (max-width: 575px) {
+          margin-bottom: 0.5rem;
+        }
+        &:focus {
+          border-color: white;
+          box-shadow: none;
+        }
+      }
+      input {
+        min-width: 200px;
+      }
+      select {
+        min-width: 120px;
+      }
+    }
+  }
+}
+.dark {
+  background-color: #323a39;
+}
