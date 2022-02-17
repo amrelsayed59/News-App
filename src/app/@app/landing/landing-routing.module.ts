@@ -21,7 +21,7 @@ const routes: Routes = [
         component: NewsListComponent,
       },
       {
-        path: 'details/:id',
+        path: 'news-list/:id',
         component: NewsDetailsComponent
       },
       { path: '**', redirectTo: 'home' },

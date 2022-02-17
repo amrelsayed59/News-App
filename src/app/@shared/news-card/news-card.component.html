@@ -1,0 +1,23 @@
+<div class="row">
+  <div *ngFor="let latestNew of latestNews" class="col-md-3">
+    <div class="card-news">
+      <div class="img-box">
+        <img [src]="latestNew.urlToImage" alt="img" />
+      </div>
+      <h5 class="card-title" (click)="openNewsDetails(latestNew.id)">
+        {{ latestNew.title }}
+      </h5>
+      <div class="d-flex justify-content-between">
+        <p class="date">{{ latestNew.published }}</p>
+        <ul class="news-icon">
+          <li>
+            <i class="fa-regular fa-heart"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-share-nodes"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

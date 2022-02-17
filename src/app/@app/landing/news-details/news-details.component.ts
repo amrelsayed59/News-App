@@ -11,8 +11,9 @@ import { LandingService } from '../landing.service';
 })
 export class NewsDetailsComponent implements OnInit, OnDestroy {
 
-  news: NewsList;
+  newsDetails: NewsList;
   newsId: string;
+  loader: boolean = false;
   $subs: Subscription[] = [];
 
   constructor( private _activatedRoute: ActivatedRoute, private _landingService: LandingService) { }
@@ -26,9 +27,12 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
   }
 
   getNewsDetails(id: string): void {
+    this.loader = true;
     const newsSub = this._landingService.getNewsDetails(id).subscribe((newsResp: NewsList) => {
-      this.news = newsResp;
-      console.log('---', this.news)
+      this.loader = false;
+      this.newsDetails = newsResp;
+    },(err) => {
+      this.loader = false;
     });
     this.$subs.push(newsSub);
   }

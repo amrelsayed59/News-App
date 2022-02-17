@@ -1,1 +1,37 @@
-<p>news-details works!</p>
+<section class="section-details">
+    <div class="container">
+        <div class="row" *ngIf="!loader">
+            <div class="col-md-6">
+              <div class="img-box">
+                <img
+                  [src]="newsDetails.urlToImage || 'https://via.placeholder.com/350x350'"
+                  alt="img"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-news">
+                <h5 class="card-title">{{ newsDetails.title }}</h5>
+                <div class="d-flex justify-content-between">
+                  <p class="date">{{ newsDetails.published | date }}</p>
+                  <ul class="news-icon">
+                    <li>
+                      <i class="fa-regular fa-heart fa-lg"></i>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-share-nodes fa-lg"></i>
+                    </li>
+                  </ul>
+                </div>
+                <p class="news-text">{{ newsDetails.content }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center my-3">
+            <span
+            *ngIf="loader"
+            class="spinner-border spinner-border-sm mr-1 text-center"
+          ></span>
+         </div>
+    </div>
+</section>

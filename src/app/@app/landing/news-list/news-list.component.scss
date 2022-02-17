@@ -30,7 +30,21 @@
       color: #b27208;
       li {
         margin: 0 0.3rem;
+        i {
+          cursor: pointer;
+        }
       }
     }
   }
+}
+
+.more-btn {
+  margin: 1rem 0.5rem;
+  border: 1px solid #193f3d;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 14px;
 }

@@ -9,6 +9,7 @@ import { SwiperModule, SwiperConfigInterface,SWIPER_CONFIG } from 'ngx-swiper-wr
 import { LandingComponent } from './landing.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
+import { SharedModule } from '@shared/shared.module';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -26,6 +27,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ThemeModule,
     HomepageRoutingModule,
     SwiperModule,
+    SharedModule,
   ],
   providers: [
     {

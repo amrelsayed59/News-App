@@ -67,6 +67,7 @@
         font-weight: bold;
         overflow: hidden;
         height: 42px;
+        cursor: pointer;
       }
       .date {
         color: #b27208;
@@ -77,6 +78,9 @@
         color: #b27208;
         li {
           margin: 0 0.3rem;
+          i {
+            cursor: pointer;
+          }
         }
       }
     }

@@ -1,26 +1,36 @@
 <div class="news-list">
-  <div class="row">
+  <!-- <app-news-card [latestNews]="latestNews"></app-news-card> -->
+
+  <div class="row" *ngIf="!loader">
     <div *ngFor="let latestNew of latestNews" class="col-md-3">
       <div class="card-news">
         <div class="img-box">
-          <img [src]="latestNew.urlToImage" alt="img" />
+          <img [src]="latestNew.urlToImage || 'https://via.placeholder.com/350x350'" alt="img" />
         </div>
         <h5 class="card-title" (click)="openNewsDetails(latestNew.id)">{{ latestNew.title }}</h5>
         <div class="d-flex justify-content-between">
-          <p class="date">{{ latestNew.published }}</p>
+          <p class="date">{{ latestNew.published | date }}</p>
           <ul class="news-icon">
             <li>
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart fa-lg"></i>
             </li>
             <li>
-              <i class="fa-solid fa-share-nodes"></i>
+              <i class="fa-solid fa-share-nodes fa-lg"></i>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <button *ngIf="newsShowMore" (click)="showMore()">Load More</button>
+
+    <div *ngIf="newsShowMore" class="d-flex flex-row-reverse align-items-center justify-content-center">
+      <div class="more-btn pointer" (click)="showMore()">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <p class="m-0">Load More</p>
+    </div>
+
   </div>
+
   <div class="text-center my-3">
     <span
     *ngIf="loader"

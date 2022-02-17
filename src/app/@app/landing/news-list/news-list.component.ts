@@ -73,7 +73,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
   
 
   openNewsDetails(id: string): void {
-    this._router.navigate(['details', id]);
+    this._router.navigate(['news-list', id]);
   }
 
   ngOnDestroy() {
