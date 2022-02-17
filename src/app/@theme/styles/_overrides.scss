@@ -1,0 +1,23 @@
+body, p, h1, h2, h3, h4, h5 , h6 {
+    font-family: "Segoe", sans-serif !important;
+}
+
+body * {
+    // font-family: "Segoe", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: -8px !important;
+}
+
+@font-face {
+    font-family: 'Segoe';
+    src: url('../../../assets/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
+}

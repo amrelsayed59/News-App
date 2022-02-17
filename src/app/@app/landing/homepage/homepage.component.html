@@ -1,0 +1,52 @@
+<section class="latest-news">
+    <div class="d-flex">
+      <div class="col-md-1 title">
+        <div class="overlay"></div>
+        <p>Latest News</p>
+      </div>
+      <div class="col-md-11">
+        <div class="news-list">
+          <div class="d-flex flex-row-reverse align-items-center pointer">
+            <div class="more-btn" (click)="gotToNewsList()">
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+            <p class="m-0">More</p>
+          </div>
+          <div class="row">
+            <swiper
+              class="swiper-container"
+              fxFlex="auto"
+              [config]="config"
+              [disabled]="disabled"
+              (indexChange)="onIndexChange($event)"
+              (swiperTransitionStart)="onSwiperEvent('transitionStart')"
+              (swiperTransitionEnd)="onSwiperEvent('transitionEnd')"
+            >
+              <div *ngFor="let latestNew of latestNews" class="swiper-slide">
+                <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                  <div class="card-news">
+                    <div class="img-box">
+                      <img [src]="latestNew.urlToImage" alt="img" />
+                    </div>
+                    <h5 class="card-title">{{ latestNew.title }}</h5>
+                    <div class="d-flex justify-content-between">
+                      <p class="date">{{ latestNew.published }}</p>
+                      <ul class="news-icon">
+                        <li>
+                          <i class="fa-regular fa-heart"></i>
+                        </li>
+                        <li>
+                          <i class="fa-solid fa-share-nodes"></i>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
