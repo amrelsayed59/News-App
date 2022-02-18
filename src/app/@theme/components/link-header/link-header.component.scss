@@ -1,6 +1,16 @@
 .main-logo {
-    width: 100px;
+  width: 100px;
 }
 .navbar {
-    background-color: #323a39;
+  background-color: #323a39;
+  border-bottom: 1px solid #727171;
+  &.fixed-pos {
+    position: absolute;
+    top: 0;
+    background: transparent;
+    width: 100%;
+    z-index: 99;
+    border-bottom: 1px solid #a6a6a6;
+    box-shadow: none !important;
+  }
 }

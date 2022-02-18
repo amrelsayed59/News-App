@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { NewsList } from '@core/data/newsList';
+import { GlobalService } from '@core/utils/global.service';
 import { Subscription } from 'rxjs';
 import { LandingService } from '../landing.service';
 
@@ -16,9 +17,10 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
   loader: boolean = false;
   $subs: Subscription[] = [];
 
-  constructor( private _activatedRoute: ActivatedRoute, private _landingService: LandingService) { }
+  constructor( private _activatedRoute: ActivatedRoute, private _landingService: LandingService, private _globalService: GlobalService) { }
 
   ngOnInit(): void {
+    this._globalService.transparentNav.next(false);
     const routeSub = this._activatedRoute.params.subscribe((params: Params) => {
       this.newsId = params['id'];
       this.getNewsDetails(this.newsId);

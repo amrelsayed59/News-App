@@ -1,0 +1,45 @@
+<div class="row m-0">
+  <swiper
+    class="swiper-container"
+    fxFlex="auto"
+    [config]="config"
+    [disabled]="disabled"
+    (indexChange)="onIndexChange($event)"
+    (swiperTransitionStart)="onSwiperEvent('transitionStart')"
+    (swiperTransitionEnd)="onSwiperEvent('transitionEnd')"
+  >
+    <div class="swiper-slide">
+      <div class="card-news">
+        <div class="img-box">
+          <img src="assets/images/banar-bg.png" alt="img" />
+        </div>
+        <div class="banner-text">
+          <h4 class="card-title">Mission</h4>
+          <h4 class="card-title">Your Business Expansion Destination</h4>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="card-news">
+        <div class="img-box">
+          <img src="assets/images/banar-bg.png" alt="img" />
+        </div>
+        <div class="banner-text">
+          <h4 class="card-title">Outsource</h4>
+          <h4 class="card-title">Engineering Experts</h4>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="card-news">
+          <div class="img-box">
+            <img src="assets/images/banar-bg.png" alt="img" />
+          </div>
+          <div class="banner-text">
+            <h4 class="card-title">Deploy</h4>
+            <h4 class="card-title">Accelerate Business Productivity</h4>
+          </div>
+        </div>
+      </div>
+  </swiper>
+</div>

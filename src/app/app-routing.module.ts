@@ -16,12 +16,12 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('@app/landing/landing.module')
-        .then(m => m.HomepageModule),
+        .then(m => m.LandingModule),
       }
     ]
   },
 
-  { path: '**', redirectTo: 'home'},
+  { path: '**', redirectTo: ''},
 ];
 
 @NgModule({

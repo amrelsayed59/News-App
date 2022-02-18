@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '@core/utils/global.service';
 
 @Component({
   selector: 'app-link-header',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./link-header.component.scss']
 })
 export class LinkHeaderComponent implements OnInit {
+   isTransparentNav: boolean;
 
-  constructor() { }
+  constructor(private _globalService: GlobalService) { }
 
   ngOnInit(): void {
+    this._globalService.transparentNav.subscribe((val: boolean) => {
+      this.isTransparentNav = val;
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { APIResponse, NewsList } from '@core/data/newsList';
+import { GlobalService } from '@core/utils/global.service';
 import { Subscription } from 'rxjs';
 import { LandingService } from '../landing.service';
 
@@ -23,10 +24,12 @@ export class NewsListComponent implements OnInit, OnDestroy {
 
   constructor(
     private _landingService: LandingService,
-    private _router: Router
+    private _router: Router,
+    private _globalService: GlobalService
   ) {}
 
   ngOnInit(): void {
+    this._globalService.transparentNav.next(false);
     this.getNews();
   }
 
