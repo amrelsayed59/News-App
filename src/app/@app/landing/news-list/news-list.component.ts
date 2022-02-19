@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { APIResponse, NewsList } from '@core/data/newsList';
 import { GlobalService } from '@core/utils/global.service';
@@ -11,16 +11,16 @@ import { LandingService } from '../landing.service';
   styleUrls: ['./news-list.component.scss'],
 })
 export class NewsListComponent implements OnInit, OnDestroy {
-  latestNews: Array<any> = [];
+  latestNews: Array<NewsList> = [];
   allLatestNews: Array<NewsList> = [];
   currentOffset: number = 0;
+  searchValue: string = '';
+  page_size: number = 6;
+  page_number: number = 1;
+  newsShowMore: Boolean = true;
+  isFilterd: boolean = false;
   loader: boolean = false;
   $subs: Subscription[] = [];
-
-  page_size: number = 6
-  page_number: number = 1;
-
-  newsShowMore: Boolean = true;
 
   constructor(
     private _landingService: LandingService,
@@ -45,7 +45,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
         })
           .filter((item) => this.isValidDate(item.published))
           .sort((a: any, b: any) => b.published - a.published);
-          this.showMore();
+        this.getfirstNews();
       },
       (err) => {
         this.loader = false;
@@ -58,24 +58,64 @@ export class NewsListComponent implements OnInit, OnDestroy {
     return date instanceof Date && !isNaN(date.valueOf());
   }
 
-  showMore () {
-      let newItem = this.paginate(this.allLatestNews, this.page_size, this.page_number)
-     if (newItem.length > 0) {
-       this.page_number += 1;
-     }
+  onChangeDate(date) {
+    this.getFilterDate(date.from, date.to);
+  }
+
+  onChangeSearch(data) {
+    this.searchValue = data;
+    // if result empty hide load more button
+    this.searchValue ? (this.newsShowMore = false) : (this.newsShowMore = true);
+  }
+
+  showMore() {
+    let newItem = this.paginate(
+      this.allLatestNews,
+      this.page_size,
+      this.page_number
+    );
+    if (newItem.length > 0) {
+      this.page_number += 1;
+    }
     this.latestNews = [...this.latestNews, ...newItem];
-    
-    if (this.latestNews.length === this.allLatestNews.length) this.newsShowMore = false;
-    
+
+    if (this.latestNews.length === this.allLatestNews.length)
+      this.newsShowMore = false;
+    if (this.isFilterd) return (this.latestNews = this.allLatestNews);
   }
 
   paginate(array, page_size, page_number) {
     // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
     return array.slice((page_number - 1) * page_size, page_number * page_size);
   }
-  
 
-  openNewsDetails(id: string): void {
+  getfirstNews() {
+    this.page_number = 1;
+    this.showMore();
+  }
+
+  //filtering From and to of date
+  getFilterDate(from, to) {
+    this.allLatestNews = this.allLatestNews.filter(function (item) {
+      if (from && to) {
+        return item.published >= from && item.published <= to;
+      }
+
+      // in case not selected to\
+      if (to === undefined) {
+        return item.published >= from;
+      }
+    });
+    this.isFilterd = true;
+    this.getfirstNews();
+    if (this.allLatestNews.length === 0) {
+      setTimeout(() => {
+        this.getNews();
+      }, 5000);
+    }
+  }
+
+  openNewsDetails(id: number): void {
     this._router.navigate(['news-list', id]);
   }
 

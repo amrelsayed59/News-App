@@ -22,15 +22,15 @@ const routes: Routes = [
       },
       {
         path: 'news-list/:id',
-        component: NewsDetailsComponent
+        component: NewsDetailsComponent,
       },
       { path: '**', redirectTo: 'home' },
-    ]
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomepageRoutingModule { }
+export class HomepageRoutingModule {}

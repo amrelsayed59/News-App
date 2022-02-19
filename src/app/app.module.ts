@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ThemeModule } from '@theme/theme.module';
 import { SwiperModule } from 'ngx-swiper-wrapper';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
     HttpClientModule,
     FormsModule,
     SwiperModule,
+    NgbModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]

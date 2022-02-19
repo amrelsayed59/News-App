@@ -1,4 +1,4 @@
-@import '/src/app/@theme/styles/variables';
+@import "/src/app/@theme/styles/variables";
 .news-filter {
   color: $white;
   display: flex;
@@ -12,7 +12,7 @@
     h5 {
       font-size: 30px;
       font-weight: 700;
-      @media(max-width:575px) {
+      @media (max-width: 575px) {
         margin-bottom: 1rem;
       }
     }
@@ -24,34 +24,67 @@
       @media (max-width: 575px) {
         display: block;
       }
-      input,
-      select {
+      input {
         background: transparent;
         border: 1px solid #777777;
         padding: 0.3rem 1rem;
         border-radius: 15px;
         outline: none;
         color: #949494;
-        cursor: pointer;
         font-size: 12px;
         margin: 0 0.3rem;
         @media (max-width: 575px) {
           margin-bottom: 0.5rem;
         }
+      }
+      input {
+        min-width: 200px;
         &:focus {
           border-color: white;
           box-shadow: none;
         }
-      }
-      input {
-        min-width: 200px;
-      }
-      select {
-        min-width: 120px;
       }
     }
   }
 }
 .dark {
   background-color: #323a39;
+}
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+button.calendar,
+button.calendar:active {
+  background: url(/assets/images/down-arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  position: absolute;
+  right: 4px;
+  bottom: 9px;
+  box-shadow: none;
+  z-index: 999;
 }

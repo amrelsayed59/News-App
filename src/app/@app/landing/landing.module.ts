@@ -15,10 +15,11 @@ import { BannerComponent } from './homepage/components/banner/banner.component';
 import { LatestNewsComponent } from './homepage/components/latest-news/latest-news.component';
 import { OpportunitiesComponent } from './homepage/components/opportunities/opportunities.component';
 import { FormsModule } from '@angular/forms';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilterPipe } from '@core/pipes/filter.pipe';
 
 @NgModule({
-  declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent, NewsFilterComponent, BannerComponent, LatestNewsComponent, OpportunitiesComponent],
+  declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent, NewsFilterComponent, BannerComponent, LatestNewsComponent, OpportunitiesComponent, FilterPipe],
   imports: [
     CommonModule,
     ThemeModule,
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     SwiperModule,
     SharedModule,
     FormsModule,
+    NgbModule
   ],
   providers: []
 })
