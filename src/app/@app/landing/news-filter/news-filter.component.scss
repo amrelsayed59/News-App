@@ -1,5 +1,6 @@
+@import '/src/app/@theme/styles/variables';
 .news-filter {
-  color: white;
+  color: $white;
   display: flex;
   justify-content: space-between;
   padding: 2rem 1rem;
@@ -11,6 +12,9 @@
     h5 {
       font-size: 30px;
       font-weight: 700;
+      @media(max-width:575px) {
+        margin-bottom: 1rem;
+      }
     }
   }
   .filter-box {

@@ -5,25 +5,17 @@ import { HomepageRoutingModule } from './landing-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ThemeModule } from '@theme/theme.module';
 
-import { SwiperModule, SwiperConfigInterface,SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LandingComponent } from './landing.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 import { SharedModule } from '@shared/shared.module';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NewsFilterComponent } from './news-filter/news-filter.component';
 import { BannerComponent } from './homepage/components/banner/banner.component';
 import { LatestNewsComponent } from './homepage/components/latest-news/latest-news.component';
 import { OpportunitiesComponent } from './homepage/components/opportunities/opportunities.component';
+import { FormsModule } from '@angular/forms';
 
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  observer: true,
-  direction: 'horizontal',
-  threshold: 50,
-  spaceBetween: 5,
-  slidesPerView: 1,
-  centeredSlides: true
-};
 
 @NgModule({
   declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent, NewsFilterComponent, BannerComponent, LatestNewsComponent, OpportunitiesComponent],
@@ -33,13 +25,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HomepageRoutingModule,
     SwiperModule,
     SharedModule,
-    MatProgressSpinnerModule,
+    FormsModule,
   ],
-  providers: [
-    {
-      provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
-    }
-  ]
+  providers: []
 })
 export class LandingModule { }

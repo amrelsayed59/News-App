@@ -1,38 +1,148 @@
-.card-news {
+@import "/src/app/@theme/styles/variables";
+.banner-section {
+  position: relative;
+  .card-news {
     .img-box {
       width: 100%;
-      height: calc(100vh - 93px);
+      height: 100vh;
       img {
         width: 100%;
         height: 100%;
+        @media (max-width: 575px) {
+          object-fit: cover;
+        }
       }
     }
     .card-title {
       font-size: 16px;
-      color: #193f3d;
+      color: $darkGreen;
       font-weight: bold;
       height: 42px;
       cursor: pointer;
     }
-
   }
 
   .banner-text {
     position: absolute;
     left: 20%;
     top: 40%;
+    @media (max-width: 575px) {
+      left: 5%;
+      top: 15%;
+    }
     .card-title {
       font-size: 50px;
-      color: white;
+      color: $white;
       margin-bottom: 0;
       &:first-child {
         font-weight: normal;
         font-size: 25px;
         text-transform: uppercase;
+        opacity: 0.8;
       }
       &:last-child {
         max-width: 65%;
         line-height: 1.2;
+        @media (max-width: 575px) {
+          max-width: 100%;
+        }
       }
     }
   }
+
+  .investiment-box {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    min-height: 150px;
+    z-index: 99;
+    right: 0;
+    @media (max-width: 575px) {
+      width: 100%;
+      position: static;
+    }
+    .recent-investiment,
+    .investiment-sector {
+      color: $white;
+      padding: 1rem;
+      height: 100%;
+      .title {
+        text-transform: uppercase;
+        padding: 0.3rem;
+        display: inline-block;
+        opacity: 0.8;
+      }
+      .recent-text {
+        font-size: 29px;
+        opacity: 0.8;
+      }
+    }
+    .recent-investiment {
+      background-color: $darkGreen;
+      .title {
+        background-color: #274a48;
+      }
+    }
+    .investiment-sector {
+      background-color: $orange;
+      .title {
+        background-color: #a36807;
+      }
+      .sectors-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 100px;
+        li {
+          border: 1px solid $white;
+          padding: 1rem;
+          margin: 1.5rem 1.5rem 1.5rem 0rem;
+          text-align: center;
+          transition: all .3s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: $white;
+            img {
+              fill: $orange;
+              color: $orange;
+            }
+            p {
+              color: $orange;
+            }
+          }
+
+          @media (max-width: 575px) {
+            width: 43%;
+          }
+          img {
+            width: 30px;
+            object-fit: scale-down;
+          }
+          > p {
+            padding-top: 1rem;
+            opacity: 0.8;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.more-button {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: -30px;
+  cursor: pointer;
+  .more {
+    border: 1px solid $white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+}

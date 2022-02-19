@@ -1,3 +1,4 @@
+@import '/src/app/@theme/styles/variables';
 .section-details {
   padding: 2rem;
   .img-box {
@@ -8,21 +9,22 @@
     }
   }
   .card-news {
+    margin-bottom: 2rem;
     .card-title {
       font-size: 30px;
-      color: #193f3d;
+      color: $darkGreen;
       font-weight: bold;
       cursor: pointer;
       line-height: 1.2;
     }
     .date {
-      color: #b27208;
+      color: $orange;
       font-size: 16px;
     }
     .news-icon {
       list-style: none;
       display: flex;
-      color: #b27208;
+      color: $orange;
       font-size: 16px;
       li {
         margin: 0 0.3rem;
@@ -32,7 +34,7 @@
       }
     }
     .news-text {
-      color: #193f3d;
+      color: $darkGreen;
       font-size: 16px;
       line-height: 2;
     }

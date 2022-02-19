@@ -5,12 +5,18 @@
     </div>
     <div class="filter-box">
       <form class="search-form">
-        <input
+        <!-- <input
           class="search-input"
           name="search"
           ngModel
           placeholder="Keryword..."
-        />
+          [(ngModel)]="searchValue"
+          (change)="onSearchHandler($event)"
+        /> -->
+        <app-search
+        (search)="searchChanged($event)"
+        [placeholderText]="'Keryword...'"
+        ></app-search>
 
         <select class="form-select" aria-label="Default select example">
           <option selected>By Date To</option>

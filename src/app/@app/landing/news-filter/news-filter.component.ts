@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsFilterComponent implements OnInit {
 
+  searchValue: string;
+  filterData: any = {};
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchChanged(searchValue) {
+    console.log('===', searchValue)
+    this.searchValue = searchValue;
+    this.searchValue = this.filterData.search;
+    console.log('filter data',this.filterData)
+    // this.getUsers();
   }
 
 }

@@ -1,0 +1,22 @@
+input,
+select {
+  background: transparent;
+  border: 1px solid #777777;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  outline: none;
+  color: #949494;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0 0.3rem;
+  @media (max-width: 575px) {
+    margin-bottom: 0.5rem;
+  }
+  &:focus {
+    border-color: white;
+    box-shadow: none;
+  }
+}
+input {
+  min-width: 200px;
+}

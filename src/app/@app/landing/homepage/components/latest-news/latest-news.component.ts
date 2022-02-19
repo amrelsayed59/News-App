@@ -11,8 +11,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./latest-news.component.scss'],
 })
 export class LatestNewsComponent implements OnInit, OnDestroy {
-  latestNews: Array<any> = [];
-  newsFilterd: Array<any> = [];
+  latestNews: Array<NewsList> = [];
+  newsFilterd: Array<NewsList> = [];
 
   loader: boolean = false;
   disabled: boolean = false;

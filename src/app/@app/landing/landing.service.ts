@@ -1,13 +1,15 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { APIResponse, NewsList } from '@core/data/newsList';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment as env } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LandingService {
+
+  newsFilters = new BehaviorSubject(null);
 
   constructor(private _http: HttpClient) { }
 

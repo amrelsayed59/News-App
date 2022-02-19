@@ -1,45 +1,57 @@
-<div class="row m-0">
-  <swiper
-    class="swiper-container"
-    fxFlex="auto"
-    [config]="config"
-    [disabled]="disabled"
-    (indexChange)="onIndexChange($event)"
-    (swiperTransitionStart)="onSwiperEvent('transitionStart')"
-    (swiperTransitionEnd)="onSwiperEvent('transitionEnd')"
-  >
-    <div class="swiper-slide">
-      <div class="card-news">
-        <div class="img-box">
-          <img src="assets/images/banar-bg.png" alt="img" />
-        </div>
-        <div class="banner-text">
-          <h4 class="card-title">Mission</h4>
-          <h4 class="card-title">Your Business Expansion Destination</h4>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div class="card-news">
-        <div class="img-box">
-          <img src="assets/images/banar-bg.png" alt="img" />
-        </div>
-        <div class="banner-text">
-          <h4 class="card-title">Outsource</h4>
-          <h4 class="card-title">Engineering Experts</h4>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide">
+<section class="banner-section">
+  <div class="row m-0">
+    <swiper
+      class="swiper-container"
+      fxFlex="auto"
+      [config]="config"
+      [disabled]="disabled"
+      (indexChange)="onIndexChange($event)"
+      (swiperTransitionStart)="onSwiperEvent('transitionStart')"
+      (swiperTransitionEnd)="onSwiperEvent('transitionEnd')"
+    >
+      <div class="swiper-slide" *ngFor="let banner of bannerInfo">
         <div class="card-news">
           <div class="img-box">
-            <img src="assets/images/banar-bg.png" alt="img" />
+            <img [src]="banner.urlToImage" alt="img" />
           </div>
           <div class="banner-text">
-            <h4 class="card-title">Deploy</h4>
-            <h4 class="card-title">Accelerate Business Productivity</h4>
+            <h4 class="card-title">{{ banner.category }}</h4>
+            <h4 class="card-title">{{ banner.description }}</h4>
           </div>
         </div>
       </div>
-  </swiper>
-</div>
+    </swiper>
+  </div>
+
+  <div class="investiment-box">
+    <div class="row m-0">
+      <div class="col-md-4 p-0">
+        <div class="recent-investiment">
+          <h6 class="title">Recent Investiment Announcement</h6>
+          <p class="recent-text">
+            Navigating the Opportunities of Africa's Logistics Sector
+          </p>
+          <div class="more-button">
+            <div class="more">
+              <div>
+                <p>More</p>
+                <i class="fa-solid fa-arrow-right-long d-block"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 p-0">
+        <div class="investiment-sector">
+          <h6 class="title">Investment sectors</h6>
+          <ul class="sectors-list">
+            <li *ngFor="let sector of sectors">
+              <img [src]="sector.urlToImage" />
+              <p>{{ sector.category }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

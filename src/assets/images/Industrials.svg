@@ -1,0 +1,8 @@
+<svg id="Industrials" xmlns="http://www.w3.org/2000/svg" width="112" height="138" viewBox="0 0 112 138">
+  <g id="Rectangle_5000" data-name="Rectangle 5000" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="0.5">
+    <rect width="112" height="138" stroke="none"/>
+    <rect x="0.25" y="0.25" width="111.5" height="137.5" fill="none"/>
+  </g>
+  <text id="Industrials-2" data-name="Industrials" transform="translate(18 108)" fill="#fff" font-size="18" font-family="SegoeUI-Semilight, Segoe UI" font-weight="300"><tspan x="0" y="0">Industrials</tspan></text>
+  <path id="industry" d="M9,0a1.236,1.236,0,0,1,.9.382,1.236,1.236,0,0,1,.382.9v17.9l10.768-8.618a1.293,1.293,0,0,1,2.09,1.005v7.614l10.768-8.618A1.293,1.293,0,0,1,36,11.574V34.717A1.3,1.3,0,0,1,34.716,36H1.286a1.236,1.236,0,0,1-.9-.382,1.236,1.236,0,0,1-.382-.9V1.286a1.236,1.236,0,0,1,.382-.9A1.236,1.236,0,0,1,1.286,0Z" transform="translate(38.999 32.997)" fill="#fff"/>
+</svg>

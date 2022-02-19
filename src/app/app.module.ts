@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { GaugeModule } from 'angular-gauge';
 
 import { ThemeModule } from '@theme/theme.module';
 import { SwiperModule } from 'ngx-swiper-wrapper';
@@ -22,7 +21,6 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    GaugeModule,
     SwiperModule,
   ],
   providers: [ ],

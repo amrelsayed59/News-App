@@ -1,3 +1,4 @@
+@import '/src/app/@theme/styles/variables';
 body, p, h1, h2, h3, h4, h5 , h6 {
     font-family: "Segoe", sans-serif !important;
 }
@@ -18,7 +19,7 @@ body * {
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: #193f3d;
+    stroke: $darkGreen;
 }
 
 @font-face {

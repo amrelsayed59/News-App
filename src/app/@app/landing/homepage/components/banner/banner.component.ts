@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Banner, Sectors } from '@core/data/homepage';
 import { GlobalService } from '@core/utils/global.service';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 @Component({
@@ -8,6 +9,9 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 })
 export class BannerComponent implements OnInit {
   disabled: boolean = false;
+  bannerInfo: Array<Banner> = [];
+  sectors: Array<Sectors> = [];
+
   config: SwiperConfigInterface = {
     a11y: true,
     slidesPerView: 1,
@@ -32,6 +36,63 @@ export class BannerComponent implements OnInit {
 
   ngOnInit(): void {
     this._globalService.transparentNav.next(true);
+    this.getBannerInfo();
+    this.getSectors();
+  }
+
+  getBannerInfo(): void {
+    this.bannerInfo = [
+      {
+        urlToImage: 'assets/images/banar-bg.png',
+        category: 'Mission',
+        description: 'Your Business Expansion Destination'
+      },
+      {
+        urlToImage: 'assets/images/banar-bg.png',
+        category: 'Outsource',
+        description: 'Engineering Experts'
+      },
+      {
+        urlToImage: 'assets/images/banar-bg.png',
+        category: 'Deploy',
+        description: 'Accelerate Business Productivity'
+      },
+    ]
+  }
+
+  getSectors(): void {
+    this.sectors = [
+      {
+        urlToImage: 'assets/images/travel.svg',
+        category: 'Tourism',
+       
+      },
+      {
+        urlToImage: 'assets/images/tree-solid.svg',
+        category: 'Agriculture',
+       
+      },
+      {
+        urlToImage: 'assets/images/house.svg',
+        category: 'Real Estate',
+        
+      },
+      {
+        urlToImage: 'assets/images/travel.svg',
+        category: 'Industials',
+        
+      },
+      {
+        urlToImage: 'assets/images/tree-solid.svg',
+        category: 'Energy',
+        
+      },
+      {
+        urlToImage: 'assets/images/heartbeat.svg',
+        category: 'Healthcare',
+        
+      },
+    ]
   }
 
   public onIndexChange(index: number): void {

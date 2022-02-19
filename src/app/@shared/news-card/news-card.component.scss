@@ -1,3 +1,4 @@
+@import '/src/app/@theme/styles/variables';
 .card-news {
   .img-box {
     width: 100%;
@@ -10,19 +11,19 @@
   .card-title {
     font-size: 16px;
     margin: 0.8rem 0;
-    color: #193f3d;
+    color: $darkGreen;
     font-weight: bold;
     overflow: hidden;
     height: 42px;
     cursor: pointer;
   }
   .date {
-    color: #b27208;
+    color: $orange;
   }
   .news-icon {
     list-style: none;
     display: flex;
-    color: #b27208;
+    color: $orange;
     li {
       margin: 0 0.3rem;
     }

@@ -1,8 +1,9 @@
 @import "~swiper/dist/css/swiper.min.css";
+@import '/src/app/@theme/styles/variables';
 
 .latest-news {
   .title {
-    background: url("../../../../../../assets/images/bg-news.jpg");
+    background: url("/assets/images/bg-news.jpg");
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
     text-transform: uppercase;
@@ -15,7 +16,7 @@
     background-size: cover;
     background-position: center center;
     position: relative;
-    color: white;
+    color: $white;
     .overlay {
       background: rgba(50, 79, 76, 0.9);
       position: absolute;
@@ -37,12 +38,12 @@
   .news-list {
     padding: 1rem 3rem;
     > p {
-      color: #193f3d;
+      color: $darkGreen;
     }
 
     .more-btn {
       margin: 1rem 0.5rem;
-      border: 1px solid #193f3d;
+      border: 1px solid $darkGreen;
       width: 40px;
       height: 40px;
       line-height: 40px;
@@ -63,19 +64,19 @@
       .card-title {
         font-size: 16px;
         margin: 0.8rem 0;
-        color: #193f3d;
+        color: $darkGreen;
         font-weight: bold;
         overflow: hidden;
         height: 42px;
         cursor: pointer;
       }
       .date {
-        color: #b27208;
+        color: $orange;
       }
       .news-icon {
         list-style: none;
         display: flex;
-        color: #b27208;
+        color: $orange;
         li {
           margin: 0 0.3rem;
           i {

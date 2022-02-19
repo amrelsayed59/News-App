@@ -1,8 +1,9 @@
-@import "~swiper/dist/css/swiper.min.css";
+// @import "~swiper/dist/css/swiper.min.css";
+@import '/src/app/@theme/styles/variables';
 
 .opportunities-news {
   .title {
-    background: url("../../../../../../assets/images/map-img.jpg");
+    background: url("/assets/images/map-img.jpg");
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
     text-transform: uppercase;
@@ -15,7 +16,7 @@
     background-size: cover;
     background-position: center center;
     position: relative;
-    color: white;
+    color: $white;
     .overlay {
       background: rgba(50, 79, 76, 0.9);
       position: absolute;
@@ -34,12 +35,11 @@
     }
   }
   .opportunity-box {
-    background: url("../../../../../../assets/images/map-img.jpg");
+    background: url("/assets/images/map-img.jpg");
     background-size: cover;
     background-position: center center;
-    // background: rgba(50, 79, 76, 0.9);
     height: 100%;
-    color: white;
+    color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
