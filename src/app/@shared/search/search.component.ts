@@ -6,8 +6,6 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-
-
   @Output() search = new EventEmitter<string>();
 
   @Input() placeholderText: string;
@@ -16,7 +14,7 @@ export class SearchComponent {
   private delayTime = 1000;
   searchValue: string = '';
 
-  constructor() { }
+  constructor() {}
 
   onSearchHandler() {
     this.cancelEmit();
@@ -24,11 +22,12 @@ export class SearchComponent {
   }
 
   emitIt() {
-    this.searchDelay = setTimeout(() => { this.search.emit(this.searchValue); }, this.delayTime);
+    this.searchDelay = setTimeout(() => {
+      this.search.emit(this.searchValue);
+    }, this.delayTime);
   }
 
   cancelEmit() {
     clearTimeout(this.searchDelay);
   }
-
 }

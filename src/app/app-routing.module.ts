@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '',
-    pathMatch: "full",
+    pathMatch: 'full',
   },
 
   {
@@ -15,17 +15,17 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('@app/landing/landing.module')
-        .then(m => m.LandingModule),
-      }
-    ]
+        loadChildren: () =>
+          import('@app/landing/landing.module').then((m) => m.LandingModule),
+      },
+    ],
   },
 
-  { path: '**', redirectTo: ''},
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

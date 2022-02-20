@@ -16,6 +16,9 @@
       font-weight: bold;
       cursor: pointer;
       line-height: 1.2;
+      @media(max-width: 575px) {
+        margin-top: 0.5rem;
+      }
     }
     .date {
       color: $orange;

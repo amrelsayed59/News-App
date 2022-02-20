@@ -4,11 +4,10 @@
   (seacrhOutput)="onChangeSearch($event)"
 ></app-news-filter>
 <div class="news-list">
-  <!-- <app-news-card [latestNews]="latestNews"></app-news-card> -->
   <div class="row" *ngIf="!loader && latestNews.length">
     <div
       *ngFor="let latestNew of latestNews | filter: searchValue"
-      class="col-md-3"
+      class="col-md-4"
     >
       <div class="card-news">
         <div class="img-box">
@@ -47,7 +46,7 @@
   </div>
 
   <p *ngIf="latestNews.length === 0">
-    <ngb-alert [dismissible]="false"> No Data Found. </ngb-alert>
+    <ngb-alert [dismissible]="false"> No News Found </ngb-alert>
   </p>
   <div class="text-center my-3" *ngIf="loader">
     <span class="spinner-border spinner-border-sm mr-1 text-center"></span>

@@ -5,28 +5,20 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment as env } from 'environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LandingService {
+  constructor(private _http: HttpClient) {}
 
-  newsFilters = new BehaviorSubject(null);
-
-  constructor(private _http: HttpClient) { }
-
-  getNewsList (): Observable<APIResponse<NewsList>> {
-    // let params = new HttpParams().set('ordering', ordering);
-
-    // if (search) {
-    //   params = new HttpParams().set('ordering', ordering).set('search', search);
-    // }
-
-    return this._http.get<APIResponse<NewsList>>(`${env.BASE_URL}/96363b7b60639fdd6e7d`)
+  getNewsList(): Observable<APIResponse<NewsList>> {
+    return this._http.get<APIResponse<NewsList>>(
+      `${env.BASE_URL}/96363b7b60639fdd6e7d`
+    );
   }
 
-  getNewsDetails (id: string): Observable<NewsList> {
-    return this._http.get<NewsList>(`${env.BASE_URL}/96363b7b60639fdd6e7d/News/${id}`)
+  getNewsDetails(id: string): Observable<NewsList> {
+    return this._http.get<NewsList>(
+      `${env.BASE_URL}/96363b7b60639fdd6e7d/News/${id}`
+    );
   }
-
-
-
 }

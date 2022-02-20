@@ -1,10 +1,10 @@
 export interface Banner {
-    urlToImage: string;
-    category: string;
-    description: string;
+  urlToImage: string;
+  category: string;
+  description: string;
 }
 
 export interface Sectors {
-    urlToImage: string;
-    category: string;
+  urlToImage: string;
+  category: string;
 }

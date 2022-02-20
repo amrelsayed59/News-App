@@ -5,13 +5,12 @@ import { LinkHeaderComponent } from '@theme/components/link-header/link-header.c
 import { RouterModule } from '@angular/router';
 import { LinkFooterComponent } from '@theme/components/link-footer/link-footer.component';
 
-
-
 @NgModule({
-  declarations: [LinkAppLayoutComponent, LinkHeaderComponent, LinkFooterComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-  ]
+  declarations: [
+    LinkAppLayoutComponent,
+    LinkHeaderComponent,
+    LinkFooterComponent,
+  ],
+  imports: [CommonModule, RouterModule],
 })
-export class LayoutsModule { }
+export class LayoutsModule {}

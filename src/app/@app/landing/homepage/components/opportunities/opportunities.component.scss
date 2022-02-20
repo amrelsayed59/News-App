@@ -1,5 +1,4 @@
-// @import "~swiper/dist/css/swiper.min.css";
-@import '/src/app/@theme/styles/variables';
+@import "/src/app/@theme/styles/variables";
 
 .opportunities-news {
   .title {
@@ -47,17 +46,17 @@
     text-transform: uppercase;
     position: relative;
     .overlay {
-        background: rgba(50, 79, 76, 0.9);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-      .opp-data {
-          position:absolute;
-      }
+      background: rgba(50, 79, 76, 0.9);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .opp-data {
+      position: absolute;
+    }
   }
 }

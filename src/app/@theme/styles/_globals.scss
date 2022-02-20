@@ -1,28 +1,59 @@
-@import '/src/app/@theme/styles/variables';
-body, p, h1, h2, h3, h4, h5 , h6 {
-    font-family: "Segoe", sans-serif !important;
+@import "/src/app/@theme/styles/variables";
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe", sans-serif !important;
 }
 
 body * {
-    // font-family: "Segoe", sans-serif !important;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: -8px !important;
+//Swiper
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -8px !important;
 }
 
-.mat-progress-spinner circle, .mat-spinner circle {
-    stroke: $darkGreen;
+.swiper-button-prev {
+  background-image: url("/assets/images/left-arrow.png") !important;
+  top: 47% !important;
+  left: 55px !important;
+  @media (min-width: 1920px) and (max-width: 5000px) {
+    top: 43% !important;
+  }
+}
+
+.swiper-button-next {
+  background-image: url("/assets/images/right-arrow.png") !important;
+  right: auto !important;
+  left: 135px !important;
+  top: 47% !important;
+  @media (min-width: 1920px) and (max-width: 5000px) {
+    top: 43% !important;
+  }
+}
+
+//DatePicker
+.ngb-dp-months {
+  @media (max-width: 575px) {
+    display: block !important;
+  }
 }
 
 @font-face {
-    font-family: 'Segoe';
-    src: url('../../../assets/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf');
+  font-family: "Segoe";
+  src: url("/assets/fonts/segoe-ui-4-cufonfonts/Segoe\ UI.ttf");
 }

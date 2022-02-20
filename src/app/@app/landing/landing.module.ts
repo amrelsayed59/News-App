@@ -19,7 +19,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '@core/pipes/filter.pipe';
 
 @NgModule({
-  declarations: [HomepageComponent, LandingComponent, NewsListComponent, NewsDetailsComponent, NewsFilterComponent, BannerComponent, LatestNewsComponent, OpportunitiesComponent, FilterPipe],
+  declarations: [
+    HomepageComponent,
+    LandingComponent,
+    NewsListComponent,
+    NewsDetailsComponent,
+    NewsFilterComponent,
+    BannerComponent,
+    LatestNewsComponent,
+    OpportunitiesComponent,
+    FilterPipe,
+  ],
   imports: [
     CommonModule,
     ThemeModule,
@@ -27,8 +37,8 @@ import { FilterPipe } from '@core/pipes/filter.pipe';
     SwiperModule,
     SharedModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: []
+  providers: [],
 })
-export class LandingModule { }
+export class LandingModule {}

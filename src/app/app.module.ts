@@ -12,9 +12,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SwiperModule,
     NgbModule,
   ],
-  providers: [ ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

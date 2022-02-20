@@ -5,16 +5,14 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Subscription } from 'rxjs';
 import { LandingService } from '../landing.service';
 
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit, OnDestroy {
-
   latestNews: Array<any> = [];
-  newsFilterd: Array<any> = [];;
+  newsFilterd: Array<any> = [];
 
   loader: boolean = false;
   disabled: boolean = false;
@@ -46,46 +44,12 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   $subs: Subscription[] = [];
 
-  constructor(private _landingService: LandingService, private _router: Router) { }
+  constructor(private _router: Router) {}
 
-
-  public onIndexChange(index: number): void {
-    console.log('Swiper index: ', index);
-  }
-
-  public onSwiperEvent(event: string): void {
-    console.log('Swiper event: ', event);
-  }
-
-  ngOnInit(): void {
-    this.getNews();
-  }
-
-  getNews(): void {
-    this.loader = true;
-    const sub = this._landingService.getNewsList().subscribe((newsList: APIResponse<NewsList>) => {
-
-      // News are Filtered by showing in home page
-      this.newsFilterd = newsList.News.filter((el) => el.showOnHomepage === 'yes');
-
-      this.latestNews = this.newsFilterd.map((item: any) => {
-        item.published = new Date(item.published);
-        return item;
-      }).filter((item) => this.isValidDate(item.published)).sort((a: any, b: any) => b.published - a.published);
-      console.log('last', this.latestNews)
-      this.loader = false;
-    }, err => {
-      this.loader = false;
-    });
-    this.$subs.push(sub)
-  }
-
-  isValidDate(date: Date): Boolean {
-    return date instanceof Date && !isNaN(date.valueOf());
-  }
+  ngOnInit(): void {}
 
   gotToNewsList(): void {
-    this._router.navigate([`/news-list`])
+    this._router.navigate([`/news-list`]);
   }
 
   openNewsDetails(id: string): void {
@@ -93,7 +57,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.$subs.forEach(sub => sub.unsubscribe());
+    this.$subs.forEach((sub) => sub.unsubscribe());
   }
-  
 }
