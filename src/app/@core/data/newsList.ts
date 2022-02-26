@@ -5,6 +5,7 @@ export interface NewsList {
   urlToImage: string;
   description: string;
   showOnHomepage: string;
+  isLiked: boolean;
 }
 
 export interface APIResponse<T> {

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NewsCardComponent } from './news-card/news-card.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 const COMPONENTS = [
   NewsCardComponent,
@@ -11,10 +12,11 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  exports: [...COMPONENTS],
+  exports: [...COMPONENTS, TranslateModule],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

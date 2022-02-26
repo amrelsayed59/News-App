@@ -14,9 +14,12 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule,
-    LayoutsModule
+    LayoutsModule,
   ],
   exports: [CommonModule, ...COMPONENTS],
   declarations: [...COMPONENTS],
 })
 export class ThemeModule { }
+
+
+

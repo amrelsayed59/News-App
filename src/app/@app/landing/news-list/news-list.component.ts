@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { APIResponse, NewsList } from '@core/data/newsList';
 import { GlobalService } from '@core/utils/global.service';
@@ -29,7 +29,6 @@ export class NewsListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this._globalService.transparentNav.next(false);
     this.getNews();
   }
 
@@ -46,6 +45,8 @@ export class NewsListComponent implements OnInit, OnDestroy {
           .filter((item) => this.isValidDate(item.published))
           .sort((a: any, b: any) => b.published - a.published);
         this.getfirstNews();
+
+        this.latestNews = this.latestNews.map(v => ({...v, isLiked: false}));
       },
       (err) => {
         this.loader = false;

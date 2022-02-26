@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Banner, Sectors } from '@core/data/homepage';
 import { GlobalService } from '@core/utils/global.service';
+import { TranslateService } from '@ngx-translate/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
 })
-export class BannerComponent implements OnInit {
+export class BannerComponent implements OnInit, OnDestroy {
   disabled: boolean = false;
   bannerInfo: Array<Banner> = [];
   sectors: Array<Sectors> = [];
+  currentLang:string;
 
   config: SwiperConfigInterface = {
     a11y: true,
@@ -27,7 +29,10 @@ export class BannerComponent implements OnInit {
     centeredSlides: false,
   };
 
-  constructor(private _globalService: GlobalService) {}
+  constructor(private _globalService: GlobalService,  public translate: TranslateService,) {
+    this.currentLang = localStorage.getItem('currentLang') || 'en';
+    this.translate.use(this.currentLang);
+  }
 
   ngOnInit(): void {
     this._globalService.transparentNav.next(true);
@@ -90,5 +95,9 @@ export class BannerComponent implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
+  }
+
+  ngOnDestroy() {
+    this._globalService.transparentNav.next(false);
   }
 }

@@ -17,10 +17,9 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
   loader: boolean = false;
   $subs: Subscription[] = [];
 
-  constructor( private _activatedRoute: ActivatedRoute, private _landingService: LandingService, private _globalService: GlobalService) { }
+  constructor( private _activatedRoute: ActivatedRoute, private _landingService: LandingService) { }
 
   ngOnInit(): void {
-    this._globalService.transparentNav.next(false);
     const routeSub = this._activatedRoute.params.subscribe((params: Params) => {
       this.newsId = params['id'];
       this.getNewsDetails(this.newsId);

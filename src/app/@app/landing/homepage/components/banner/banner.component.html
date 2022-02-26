@@ -19,6 +19,7 @@
             <h4 class="card-title">{{ banner.description }}</h4>
           </div>
           <div class="banner-index">{{i+1}}</div>
+          <div class="banner-length ">/{{bannerInfo.length}}</div>
         </div>
       </div>
     </swiper>
@@ -44,7 +45,7 @@
       </div>
       <div class="col-md-8 p-0">
         <div class="investiment-sector">
-          <h6 class="title">Investment sectors</h6>
+          <h6 class="title">{{ "INVESTMENT-SECTORS" | translate}}</h6>
           <ul class="sectors-list">
             <li *ngFor="let sector of sectors">
               <img [src]="sector.urlToImage" />

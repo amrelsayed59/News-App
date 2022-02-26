@@ -5,6 +5,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class GlobalService {
-  public transparentNav = new BehaviorSubject(true);
+  public transparentNav = new BehaviorSubject(false);
   constructor() { }
 }

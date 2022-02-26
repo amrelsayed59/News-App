@@ -6,7 +6,7 @@
 <div class="news-list">
   <div class="row" *ngIf="!loader && latestNews.length">
     <div
-      *ngFor="let latestNew of latestNews | filter: searchValue"
+      *ngFor="let latestNew of latestNews | filter: searchValue; let index = i"
       class="col-md-4"
     >
       <div class="card-news">
@@ -25,7 +25,7 @@
           <p class="date">{{ latestNew.published | date }}</p>
           <ul class="news-icon">
             <li>
-              <i class="fa-regular fa-heart fa-lg"></i>
+              <i class="fa-heart fa-lg" [ngClass]="latestNew.isLiked ? 'fas':'far'"  (click)="latestNew.isLiked = !latestNew.isLiked"></i>
             </li>
             <li>
               <i class="fa-solid fa-share-nodes fa-lg"></i>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <p *ngIf="latestNews.length === 0">
+  <p *ngIf="latestNews.length === 0 && !loader">
     <ngb-alert [dismissible]="false"> No News Found </ngb-alert>
   </p>
   <div class="text-center my-3" *ngIf="loader">

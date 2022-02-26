@@ -8,9 +8,35 @@
       <div class="opportunity-box">
         <div class="overlay"></div>
         <div class="opp-data">
-          <p>Opportunities</p>
+          <!-- <p>Opportunities</p> -->
+          <div class="row">
+            <div class="col-md-2">
+              <h5>Country</h5>
+              <ul class="list-unstyled">
+                <li *ngFor="let item of sectors">{{item.country}}</li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h5>Sectors</h5>
+              <ul class="list-unstyled">
+                <li *ngFor="let item of sectors">{{item.sector}}</li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h5>Opportunities</h5>
+              <ul class="list-unstyled">
+                <li *ngFor="let item of sectors">{{item.oppor}}</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="map-box text-center">
+                <img src="assets/images/map.png" alt="Map">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>

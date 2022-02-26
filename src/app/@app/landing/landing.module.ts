@@ -17,6 +17,9 @@ import { OpportunitiesComponent } from './homepage/components/opportunities/oppo
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '@core/pipes/filter.pipe';
+// import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+// import { HttpClient } from '@angular/common/http';
+// import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,19 @@ import { FilterPipe } from '@core/pipes/filter.pipe';
     SharedModule,
     FormsModule,
     NgbModule,
+    // TranslateModule.forRoot({
+    //   defaultLanguage: 'en',
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: createTranslateLoader,
+    //     deps: [HttpClient],
+    //   },
+    // }),
   ],
   providers: [],
 })
 export class LandingModule {}
+
+// export function createTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
