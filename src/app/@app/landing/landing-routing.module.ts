@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component';
 import { LandingComponent } from './landing.component';
-import { NewsDetailsComponent } from './news-details/news-details.component';
-import { NewsListComponent } from './news-list/news-list.component';
+import { NewsDetailsComponent } from './news/components/news-details/news-details.component';
 
 const routes: Routes = [
   {
@@ -12,16 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomepageComponent,
-        pathMatch: 'full',
-        data: { title: 'Home' },
+        loadChildren: () => import('@app/landing/home-page/home-page.module')
+          .then(m => m.HomePageModule),
       },
       {
-        path: 'news-list',
-        component: NewsListComponent,
+        path: 'news',
+        loadChildren: () => import('@app/landing/news/news.module')
+          .then(m => m.NewsModule),
       },
       {
-        path: 'news-list/:id',
+        path: 'news/:id',
         component: NewsDetailsComponent,
       },
       { path: '**', redirectTo: 'home' },

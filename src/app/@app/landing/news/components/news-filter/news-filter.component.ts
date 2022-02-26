@@ -1,14 +1,12 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { NewsList } from '@core/data/newsList';
-import {
-  NgbDate,
-  NgbCalendar,
-  NgbDateParserFormatter,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar, NgbDate, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-news-filter',
   templateUrl: './news-filter.component.html',
-  styleUrls: ['./news-filter.component.scss'],
+  styleUrls: ['./news-filter.component.scss']
 })
 export class NewsFilterComponent implements OnInit {
   @Output() updateFilter = new EventEmitter<any>();
@@ -25,7 +23,7 @@ export class NewsFilterComponent implements OnInit {
   constructor(
     private calendar: NgbCalendar,
     public formatter: NgbDateParserFormatter
-  ) {
+  ) { 
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }

@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { LandingService } from '@app/landing/landing.service';
 import { NewsList } from '@core/data/newsList';
 import { GlobalService } from '@core/utils/global.service';
 import { Subscription } from 'rxjs';
-import { LandingService } from '../landing.service';
 
 @Component({
   selector: 'app-news-details',
   templateUrl: './news-details.component.html',
-  styleUrls: ['./news-details.component.scss']
+  styleUrls: ['./news-details.component.scss'],
 })
 export class NewsDetailsComponent implements OnInit, OnDestroy {
 

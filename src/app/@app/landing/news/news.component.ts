@@ -6,11 +6,11 @@ import { Subscription } from 'rxjs';
 import { LandingService } from '../landing.service';
 
 @Component({
-  selector: 'app-news-list',
-  templateUrl: './news-list.component.html',
-  styleUrls: ['./news-list.component.scss'],
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.scss']
 })
-export class NewsListComponent implements OnInit, OnDestroy {
+export class NewsComponent implements OnInit, OnDestroy {
   latestNews: Array<NewsList> = [];
   allLatestNews: Array<NewsList> = [];
   currentOffset: number = 0;
@@ -26,7 +26,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
     private _landingService: LandingService,
     private _router: Router,
     private _globalService: GlobalService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getNews();
@@ -117,10 +117,11 @@ export class NewsListComponent implements OnInit, OnDestroy {
   }
 
   openNewsDetails(id: number): void {
-    this._router.navigate(['news-list', id]);
+    this._router.navigate(['news', id]);
   }
 
   ngOnDestroy() {
     this.$subs.forEach((sub) => sub.unsubscribe());
   }
+
 }

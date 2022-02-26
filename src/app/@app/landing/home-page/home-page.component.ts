@@ -7,8 +7,8 @@ import { LandingService } from '../landing.service';
 
 @Component({
   selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss'],
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   latestNews: Array<any> = [];

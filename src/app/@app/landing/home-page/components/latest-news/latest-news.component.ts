@@ -91,11 +91,11 @@ export class LatestNewsComponent implements OnInit, OnDestroy {
   }
 
   gotToNewsList(): void {
-    this._router.navigate([`/news-list`]);
+    this._router.navigate([`/news`]);
   }
 
   openNewsDetails(id: string): void {
-    this._router.navigate(['news-list', id]);
+    this._router.navigate(['/news', id]);
   }
 
   ngOnDestroy() {
